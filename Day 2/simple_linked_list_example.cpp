@@ -22,6 +22,18 @@ int main()
     while (current != NULL) {
         cout << "Data: " << current->data << " at address: " << current << endl; // Print the data of the current
         current = current->next; // Move to the next node
-    } 
+    }
+
+ // Cleanup: Free memory
+    Node* current = head;
+    while (current != NULL) {
+        Node* nextNode = current->next;  // Store next node before deletion
+        cout << "Deleting node with value: " << current->data << endl;
+        delete current;  // Free current node
+        current = nextNode;  // Move to next node
+    }
+
+    head = NULL; // Set head to NULL after deletion
+    cout << "Memory cleaned up!" << endl;
 
 }
