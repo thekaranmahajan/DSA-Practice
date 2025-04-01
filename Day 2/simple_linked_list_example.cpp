@@ -24,13 +24,13 @@ int main()
         current = current->next; // Move to the next node
     }
 
- // Cleanup: Free memory
-    Node* current = head;
-    while (current != NULL) {
-        Node* nextNode = current->next;  // Store next node before deletion
-        cout << "Deleting node with value: " << current->data << endl;
-        delete current;  // Free current node
-        current = nextNode;  // Move to next node
+    // Cleanup: Free memory
+    Node* c = head;
+    while (c != NULL) {
+        Node* nextNode = c->next;  // Store next node before deletion
+        cout << "Deleting node with value: " << c->data << endl;
+        delete c;  // Free c node
+        c = nextNode;  // Move to next node
     }
 
     head = NULL; // Set head to NULL after deletion
